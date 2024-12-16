@@ -10,3 +10,13 @@ Currently, two official plugins are available:
 # Now Installed Tailwind CSS
 
 # Form Validation 
+
+# Firebase Deployment done 
+
+# Create Sign up user in Fire Base
+
+# Finished SIGN IN / SIGN UP LOGIC
+
+# Setup Redux Store
+
+# 
