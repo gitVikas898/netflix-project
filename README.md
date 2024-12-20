@@ -19,4 +19,11 @@ Currently, two official plugins are available:
 
 # Setup Redux Store
 
-# 
+# Fixed Bug 
+- in Sign Up user display name and profile picture
+- if the user is not logged in redirect /browse to login page and vice-verca
+- unsubscribed to the onAuthStateChange Callback
+
+# Registered for TMDB API
+- Made API Call for Now Playing Movies
+

@@ -6,15 +6,14 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
 const Login = () => {
-  // using useNavigate Hook to navigate
+ 
 
-  const navigate = useNavigate();
+  
   const dispatch = useDispatch();
 
   //using use ref hook
@@ -64,14 +63,13 @@ const Login = () => {
               .then(() => {
                const {uid,displayName,email,photoURL} = auth.currentUser;
                        dispatch(addUser({uid:uid,email:email,name:displayName,photoURL:photoURL}));
-                navigate("/browse");
+               
               })
               .catch((error) => {
                 // An error occurred
                 console.log(error);
               });
-            navigate("/browse");
-            console.log(user);
+           
             // ...
           })
           .catch((error) => {
@@ -86,7 +84,7 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/browse");
+           
             console.log(user);
             // ...
           })

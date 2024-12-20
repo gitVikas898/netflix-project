@@ -2,3 +2,11 @@ export const LOGO_URL = "https://help.nflxext.com/helpcenter/OneTrust/oneTrust_p
 export const BACKGROUND_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/729ce5c2-d831-436a-8c9d-f38fea0b99b3/web/IN-en-20241209-TRIFECTA-perspective_4aef76eb-7d5b-4be0-93c0-5f67320fd878_small.jpg";
 export const USER_LOGI_URL = "https://occ-0-2610-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
 export const AVATAR_URL = "https://github.com/settings/profile"
+
+export const API_OPTIONS = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYTQ4ZTNhY2JhNWQ4ODc5ZjAyMjg2Yzc4NWVkZDFiZCIsIm5iZiI6MTczNDY5ODcxOC4wNDEsInN1YiI6IjY3NjU2NmRlYWZmNWE3ZDY0MTc0YTAzNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a6pNI1aXxDOSURbcmBWskWp7QdT9nO2jPCzFBVhl814'
+    }
+  };
