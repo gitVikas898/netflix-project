@@ -1,26 +1,18 @@
 import Header from "./Header"
-import { API_OPTIONS } from "../utils/constants"
-import { useEffect } from "react";
+import useNowPlaying from "../hooks/useNowPlaying"
+import MainContainer from "./MainContainer";
+import SecondContainer from "./SecondContainer";
+
 const Browse = () => {
 
-  const getNowPlaying = async()=>{
-     const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1',API_OPTIONS);
-
-      const response = await data.json();
-
-      console.log(response);
-  }
-
-  useEffect(()=>{
-    getNowPlaying()
-  },[])
-
-
-
+  useNowPlaying();
+  
   return (
-    <div>
+    <div className="grid gap-4">
        <Header></Header>
-    </div>
+         <MainContainer></MainContainer>
+         <SecondContainer></SecondContainer>
+       </div>
   )
 }
 
