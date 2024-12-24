@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { API_OPTIONS } from "../utils/constants"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailers } from "../utils/moviesSlice";
 
 const VideoBackground = ({movieId}) => {
+
+    const trailerVideo = useSelector((store)=>store.movies?.trailers)
 
     const dispatch = useDispatch();
 
@@ -28,7 +30,7 @@ const VideoBackground = ({movieId}) => {
 
   return (
     <div>
-        <iframe width="560" height="315" src={"https://www.youtube.com/embed/"} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+trailerVideo?.key} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
     </div>
   )
 }
