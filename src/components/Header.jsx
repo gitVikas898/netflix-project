@@ -57,13 +57,13 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-black w-screen flex items-center justify-between p-4">
+    <div className="bg-gradient-to-b from-black w-screen flex items-center justify-between p-4 fixed z-10">
       <div id="left">
-        <img src={LOGO_URL} alt="netflix-logo" className="max-w-20" />
+        <img src={LOGO_URL} alt="netflix-logo" className="max-w-52" />
       </div>
       {user && (
         <div id="right" className="flex items-center gap-2">
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center gap-2">
             <img src={user.photoURL} alt="USER" className="w-10 rounded-sm" />
             <p className="text-white font-semibold">{user.name}</p>
           </div>
