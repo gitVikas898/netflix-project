@@ -1,8 +1,23 @@
+import { useSelector } from "react-redux"
+import MovieList from "./MovieList"
 
 const SecondContainer = () => {
-  return (
-    <div className="border-2 border-fuchsia-700 border-solid w-screen">
-        SecondContainer
+
+  const movies = useSelector(store=>store.movies?.nowPlayingMovies);
+
+
+  return ( movies &&
+    <div>
+      
+        
+          <div className="-mt-60">
+            <MovieList title={"Now Playing"} movies={movies} ></MovieList>
+            <MovieList title={"Popular"} movies={movies} ></MovieList>
+            <MovieList title={"Trending"} movies={movies} ></MovieList>
+            <MovieList title={"Horror"} movies={movies} ></MovieList>
+          </div>
+        
+       
     </div>
   )
 }

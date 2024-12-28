@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/assets/gvim_9.1.0_x64_signed.exe
+src/assets/nvim-win64.msi

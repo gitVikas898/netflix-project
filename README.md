@@ -28,14 +28,23 @@ Currently, two official plugins are available:
 - Made API Call for Now Playing Movies
 
 # Movies TMDB API 
-    - fetched nowplaying movies
+    - created a movies slice in redux 
+    - used custom hook to fetch nowplaying movies
     - pushed the data into our redux store
     - wrote logic to get moviesId from store
     - passed movie id to videoTitle Component 
-    - redered title page with data from movieid
+    - rendered title page with data from movieid
     - fetched trailers based on movie id using custom hook
     - put this data again in the store
     - create videobackground component 
     - passed trailer data to video background component
     - rendered trailers on the page finally 
 # Secondary Component 
+    - Movies List Popular 
+        - Movie Cards
+    - Movie List Now Playing
+        - Movie Cards
+    - Movie List Trending 
+        - Movie Cards
+    - Movie List Horror
+        - Movie Cards
