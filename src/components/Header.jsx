@@ -62,10 +62,10 @@ const Header = () => {
         <img src={LOGO_URL} alt="netflix-logo" className="max-w-40" />
       </div>
       {user && (
-        <div id="right" className="flex items-center gap-2">
+        <div id="right" className="flex items-center gap-4 p-2">
+          <button className="bg-green-500 text-white px-2 py-1 rounded-md">GPT Search</button>
           <div className="flex flex-col items-center gap-2">
             <img src={user.photoURL} alt="USER" className="w-10 rounded-sm" />
-            <p className="text-white font-semibold">{user.name}</p>
           </div>
           <button className=" text-white bg-red-600 rounded-md px-2 py-1" onClick={handleSignOut}>
             Sign Out{" "}
