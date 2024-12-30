@@ -2,10 +2,10 @@ import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
   return (
-    <div className="overflow-x-scroll p-4 grid gap-2  bg-black">
-        <h1 className="text-2xl text-white font-semibold bg-black">{title}</h1>
-        <div className="flex bg-black">
-            <div className="flex gap-2">
+    <div className="overflow-x-scroll p-8 grid gap-8 ">
+        <h1 className="text-2xl text-white font-semibold">{title}</h1>
+        <div className="flex">
+            <div className="flex gap-8">
                 {movies.map((movie) => (
                 <MovieCard key={movie.id} posterPath={movie.poster_path}></MovieCard>
                 ))}
