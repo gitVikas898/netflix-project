@@ -48,3 +48,6 @@ Currently, two official plugins are available:
         - Movie Cards
     - Movie List Horror
         - Movie Cards
+    
+    - Built Secondary Component
+    - Made the Browse Page
