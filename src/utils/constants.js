@@ -12,3 +12,13 @@ export const API_OPTIONS = {
   };
 
   export const CDN_POSTER_URL = "https://image.tmdb.org/t/p/w500/"
+
+  const supportedLanguages =[
+    {identifier: "en", name: "English"},
+    {identifier: "hindi", name: "Hindi"},
+    {identifier: "spanish", name: "Spanish"},
+    {identifier: "french", name: "French"}
+  ]
+
+  export default supportedLanguages;
+

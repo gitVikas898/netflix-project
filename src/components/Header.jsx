@@ -7,6 +7,9 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { toggleSearchView } from "../utils/gptSlice";
+import supportedLanguages from "../utils/constants";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -27,6 +30,10 @@ const Header = () => {
         navigate("/error");
       });
   };
+
+  const handleGptSearch = () =>{
+      dispatch(toggleSearchView());
+  }
 
   useEffect(() => {
    const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -56,14 +63,23 @@ const Header = () => {
     return()=> unsubscribe() // unsubscribe when component unmounts
   }, []);
 
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  }
+
   return (
-    <div className="bg-gradient-to-b from-black w-screen flex items-center justify-between p-4 fixed z-30">
+    <div className="bg-gradient-to-b from-black w-screen flex items-center justify-between p-2 fixed z-30">
       <div id="left">
         <img src={LOGO_URL} alt="netflix-logo" className="max-w-40" />
       </div>
       {user && (
-        <div id="right" className="flex items-center gap-4 p-2">
-          <button className="bg-green-500 text-white px-2 py-1 rounded-md">GPT Search</button>
+        <div id="right" className="flex items-center gap-4">
+          <select onChange={handleLanguageChange} className="text-white bg-black p-2 rounded-md outline-none cursor-pointer">
+            {supportedLanguages.map((language)=>(
+              <option key={language.identifier} value={language.identifier}>{language.name}</option>
+            ))}
+          </select>
+          <button className="bg-green-500 text-white px-2 py-1 rounded-md" onClick={handleGptSearch}>GPT Search</button>
           <div className="flex flex-col items-center gap-2">
             <img src={user.photoURL} alt="USER" className="w-10 rounded-sm" />
           </div>
