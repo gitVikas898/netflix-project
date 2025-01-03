@@ -18,6 +18,8 @@ const Header = () => {
 
   const user = useSelector((store) => store.user);
 
+  const showGptSearch = useSelector((store) => store.gpt.showgptSearch);
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -74,12 +76,13 @@ const Header = () => {
       </div>
       {user && (
         <div id="right" className="flex items-center gap-4">
-          <select onChange={handleLanguageChange} className="text-white bg-black p-2 rounded-md outline-none cursor-pointer">
+          {showGptSearch && 
+          (<select onChange={handleLanguageChange} className="text-white bg-black p-2 rounded-md outline-none cursor-pointer">
             {supportedLanguages.map((language)=>(
               <option key={language.identifier} value={language.identifier}>{language.name}</option>
             ))}
-          </select>
-          <button className="bg-green-500 text-white px-2 py-1 rounded-md" onClick={handleGptSearch}>GPT Search</button>
+          </select>)}
+          <button className="bg-green-500 text-white px-2 py-1 rounded-md" onClick={handleGptSearch}>{showGptSearch ? "Home" : "GPT Search"}</button>
           <div className="flex flex-col items-center gap-2">
             <img src={user.photoURL} alt="USER" className="w-10 rounded-sm" />
           </div>
